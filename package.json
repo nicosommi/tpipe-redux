@@ -2,7 +2,7 @@
   "name": "tpipe-redux",
   "version": "0.0.6",
   "description": "piper",
-  "main": "./dist/lib/lib.js",
+  "main": "./dist/lib/mappers.js",
   "standard": {
     "globals": [
       "describe",
@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "standard": "^7.1.2",
+    "tpipe": "nicosommi/tpipe#develop",
     "sinon": "^1.17.3",
     "should": "^8.2.2",
     "mocha": "^2.2.5",

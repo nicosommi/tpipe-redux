@@ -2,7 +2,7 @@
 /* name, /'name': 'tpipe-redux'/g, 'name': 'tpipe-redux'
 version, /'version': '\bv?(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)(?:-[\da-z\-]+(?:\.[\da-z\-]+)*)?(?:\+[\da-z\-]+(?:\.[\da-z\-]+)*)?\b'/ig, 'version': '0.0.6'
 description, /'description': 'a\ gdd\ utility'/g, 'description': 'piper'
-main, /'main': '[a-zA-Z\.\/]+'/ig, 'main': './dist/lib/lib.js'
+main, /'main': '[a-zA-Z\.\/]+'/ig, 'main': './dist/lib/mappers.js'
 license, /MIT/g, MIT */
 /* endph */
 /* ph ignoringStamps */
@@ -14,7 +14,7 @@ module.exports =
   'name': 'tpipe-redux',
   'version': '0.0.6',
   'description': 'piper',
-  'main': './dist/lib/lib.js',
+  'main': './dist/lib/mappers.js',
   'standard': {
     'globals': [
       'describe',
@@ -74,6 +74,7 @@ module.exports =
   'devDependencies': {
     /* ph componentDevDependencies */
     'standard': '^7.1.2',
+    'tpipe': 'nicosommi/tpipe#develop',
     /* endph */
     /* stamp webapp_devDependencies */
     /* endstamp */

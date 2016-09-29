@@ -1,7 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable max-len */
 import { it, describe, afterEach } from 'mocha';
-import expect from 'expect';
 import { reduxToPipe,
   injectDataIntoBody,
   bodyPayloadToPipe,

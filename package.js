@@ -1,6 +1,6 @@
 /* ph replacements */
 /* name, /'name': 'tpipe-redux'/g, 'name': 'tpipe-redux'
-version, /'version': '\bv?(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)(?:-[\da-z\-]+(?:\.[\da-z\-]+)*)?(?:\+[\da-z\-]+(?:\.[\da-z\-]+)*)?\b'/ig, 'version': '0.0.6'
+version, /'version': '\bv?(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)(?:-[\da-z\-]+(?:\.[\da-z\-]+)*)?(?:\+[\da-z\-]+(?:\.[\da-z\-]+)*)?\b'/ig, 'version': '0.0.7'
 description, /'description': 'a\ gdd\ utility'/g, 'description': 'piper'
 main, /'main': '[a-zA-Z\.\/]+'/ig, 'main': './dist/lib/mappers.js'
 license, /MIT/g, MIT */
@@ -12,7 +12,7 @@ license, /MIT/g, MIT */
 module.exports =
 {
   'name': 'tpipe-redux',
-  'version': '0.0.6',
+  'version': '0.0.7',
   'description': 'piper',
   'main': './dist/lib/mappers.js',
   'standard': {

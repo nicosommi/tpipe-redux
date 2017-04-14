@@ -48,7 +48,8 @@ packageObject = {
   devDependencies: {
     ...packageObject.devDependencies,
     debug: '^2.2.0',
-    sinon: '^1.17.7'
+    sinon: '^1.17.7',
+    coveralls: '^2.13.0'
   },
   scripts: {
     ...packageObject.scripts

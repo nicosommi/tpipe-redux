@@ -37,7 +37,7 @@ packageObject = {
     ...packageObject.babel
   },
   name: 'tpipe-redux',
-  version: '0.0.1',
+  version: '0.0.2',
   main: './dist/lib/mappers.js',
   description: 'redux pipe set for tpipe',
   repository: {
@@ -97,7 +97,7 @@ packageObject = {
     lines: 60,
     statements: 60,
     functions: 60,
-    branches: 60,
+    branches: 50,
     sourceType: 'module',
     include: [
       'source/**/*.js'

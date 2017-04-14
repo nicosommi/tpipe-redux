@@ -1,30 +1,45 @@
-import Promise from './promise.js'
 import { Logger } from './utils/log.js'
-import { piper } from 'tpipe'
+import Promise from './promise.js'
 
-const logger = new Logger('nicosommi.tpipe-redux.mappers')
+const logger = new Logger('nicosommi.tPipeRedux')
 
-export function chainThunks (...args) {
-  logger.log('chainThunks', { args })
-  const newThunk = piper(
-    (input) => {
-      logger.log('chainThunk thunk called')
-      const { dispatch, getState } = input.parameters
-      return Promise.reduce(
-        args,
-        (a, thunk) => {
-          logger.log('calling thunk ', { thunk })
-          return thunk(dispatch, getState)(input)
-        },
-        {}
-      )
+export const createBodyDispatcher = (actionCreator) => {
+  logger.log('createBodyDispatcher begin')
+  return function dispatchBody (input, potentialInput) {
+    logger.log('dispatchBody begin')
+    let { dispatch } = input[this.options.metaKey]
+    if (!dispatch) {
+      dispatch = potentialInput[this.options.metaKey].dispatch
     }
-  )
-    .reset()
-    .input((input, dispatch, getState) => {
-      logger.log('chain thunk input mapper called')
-      return Object.assign(input, { parameters: { dispatch, getState } })
-    }).pipe.getThunk()
-
-  return newThunk
+    dispatch(actionCreator(input[this.options.payloadKey]))
+    return input
+  }
 }
+
+export function mapActionToInput (input, actionPayload, dispatch, getState) {
+  logger.log('mapActionToInput begin')
+  return {
+    [this.options.metaKey]: {
+      dispatch,
+      getState
+    },
+    [this.options.payloadKey]: actionPayload
+  }
+}
+
+export function getThunk () {
+  return (...args) => {
+    return (...more) => {
+      return this.open.apply(this, args.concat(more))
+    }
+  }
+}
+
+const defaultSet = {
+  inputMappings: [mapActionToInput],
+  extraProperties: {
+    getThunk
+  }
+}
+
+export default defaultSet
